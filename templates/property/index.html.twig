@@ -5,5 +5,24 @@
 {% block body %}
 <div class="container-fluid mt-4">
     <h1>Nos biens</h1>
+    <p>Property Name: {{ controller_name }} </p>
+    <table class="table table-striped">
+        <tr>
+            <th>title</th>
+            <th>description</th>
+            <th>surface</th>
+            <th>rooms</th>
+            <th>sold</th>
+        </tr>
+        {% for properties in properties %}
+        <tr>
+            <td>{{ properties.title }}</td>
+            <td>{{ properties.description }}</td>
+            <td>{{ properties.surface }}</td>
+            <td>{{ properties.rooms }}</td>
+            <td>{{ properties.sold }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 {% endblock %}

@@ -32,6 +32,21 @@ class PropertyController extends AbstractController
 
         return $this->render('property/index.html.twig', [
             'controller_name' => 'PropertyController',
+            'current_menu' => 'properties',
+            'properties' => $properties
+        ]);
+    }
+
+    /**
+     * @Route("/property/{slug}-{id}", name="property.show", requirements={"slug": "[a-z0-9\-]*"})
+     * @return Response
+     */
+    public function show($slug,$id):Response
+    {
+        $property = $this->repository->find($id);
+        return $this->render('property/show.html.twig',[
+            'property' => $property,
+            'controller_name' => 'PropertyController',
             'current_menu' => 'properties'
         ]);
     }

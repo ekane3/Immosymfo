@@ -72,13 +72,13 @@
             </div>
         </div>
 
-        <div class="row flex">
+        <div class="row flex my-4">
             {%  for property in properties %}
-                <div class="col-3">
+                <div class="col-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="#" *>{{ property.title }}</a>
+                                <a href="{{ path('property.show',{id:property.id,slug:property.slug}) }}" *>{{ property.title }}</a>
                             </h5>
 
                             <p class="card-text">
@@ -87,7 +87,9 @@
                             <div class="primary-text">
                                 <span class="badge badge-primary">{{ property.surface }} m²</span>
                                 <span class="badge badge-primary">{{ property.rooms }} pièces</span>
-                                <span class="badge badge-primary">{{ property.formattedPrice }} €</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="badge badge-primary " style="font-weight:bold;font-size: 2rem;">{{ property.formattedPrice }} €</span>
                             </div>
                         </div>
                     </div>
