@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Gérer les biens' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+
+    </div>
+    <div class="container mt-4">
+        <h1>Gérer les biens</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Prix</th>
+                        <th>Surface</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for property in properties %}
+                        <tr>
+                            <td>{{ property.id }}</td>
+                            <td>{{ property.title }}</td>
+                            <td>{{ property.description }}</td>
+                            <td>{{ property.price }}</td>
+                            <td>{{ property.surface }}</td>
+                            <td>
+                                <a href="{{ path('admin.property.edit',{id: property.id}) }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Modifier</a>
+                                <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i> Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
