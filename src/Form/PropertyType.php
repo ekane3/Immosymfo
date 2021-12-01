@@ -32,7 +32,8 @@ class PropertyType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        //translation_domain : forms ( fichier forms.fr.yaml crée dans le dossier translation pour la traduction des labels du formulaire        $resolver->setDefaults([
+        // translation_domain : forms ( fichier forms.fr.yaml crée dans le dossier translation pour la traduction des labels du formulaire
+        $resolver->setDefaults([
             'data_class' => Property::class,
             'translation_domain' => 'forms',
         ]);
